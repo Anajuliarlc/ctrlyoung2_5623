@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperatura Média</title>
+</head>
+<body>
+  <h1>Temperatura Média da Sua Cidade</h1>
+
+  <script>
+    // Solicita os dados ao usuário
+    const cidade = prompt("Digite o nome da sua cidade:");
+    const temperaturaC = parseFloat(prompt("Digite a temperatura média em °C:"));
+
+    // Verifica se os valores são válidos
+    if (!cidade || isNaN(temperaturaC)) {
+      document.write("<p>Por favor, insira valores válidos para cidade e temperatura.</p>");
+    } else {
+      // Converte para Fahrenheit
+      const temperaturaF = (temperaturaC * 9/5) + 32;
+
+      // Exibe o resultado na página
+      document.write(`
+        <p>A temperatura média em <strong>${cidade}</strong> é de 
+        <strong>${temperaturaC.toFixed(1)}°C</strong>, o que equivale a 
+        <strong>${temperaturaF.toFixed(1)}°F</strong>.</p>
+      `);
+    }
+  </script>
+</body>
+</html>
+
