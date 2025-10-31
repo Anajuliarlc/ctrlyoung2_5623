@@ -7,17 +7,17 @@
 				document.write(area);
 			}
 			
-			function  areaDoQuadrado (lado){
+			function areaDoQuadrado (lado){
 				lado = parseInt(lado);
 				var area = lado**2;
 				return area;
 			}	
 			
-			areaDoRetangulo(5, 10);		
-			document.write("A área do quadro é: "+ areaDoQuadrado (5) + " centímetros quadrados" );
+			areaDoRetangulo(5, 10);	//50	
+			document.write("A área do quadro é: "+ areaDoQuadrado (5) + " centímetros quadrados" ); //25
 			
-			var quadradoPrograma = areaDoQuadrado(20);
-			var quadradoVisitante = areaDoQuadrado(prompt("Digite um lado do seu quadrado "));
+			var quadradoPrograma = areaDoQuadrado(20); //400
+			var quadradoVisitante = areaDoQuadrado(prompt("Digite um lado do seu quadrado ")); //escolha
 			
 			document.write("A diferença entre as áreas dos quadrados é: " + 
 							(quadradoPrograma - quadradoVisitante)  +
@@ -25,4 +25,5 @@
 		</script>
 	</body>
 </html>
+
 
