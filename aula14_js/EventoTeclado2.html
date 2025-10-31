@@ -1,0 +1,19 @@
+<html>
+	<head><title>Ctrl+Play</title></head>
+	<body>
+	
+	<script type="text/javascript">
+		function teclaPressionada(event) {
+			var x = event.key;
+			document.getElementById("texto").innerHTML = "tecla pressionada: " + x;
+		}
+	</script>
+	
+	<input type="text" size="40" onkeydown="teclaPressionada(event)">
+	
+	<p id="texto"></p>
+	
+	</body>
+</html>
+
+

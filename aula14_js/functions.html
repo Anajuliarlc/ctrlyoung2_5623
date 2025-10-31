@@ -1,0 +1,28 @@
+<html>
+	<head> <title> Ctrl+Play </title> </head>
+	<body>
+		<script>
+			function areaDoRetangulo (largura, comprimento){
+				var area = largura * comprimento;
+				document.write(area);
+			}
+			
+			function  areaDoQuadrado (lado){
+				lado = parseInt(lado);
+				var area = lado**2;
+				return area;
+			}	
+			
+			areaDoRetangulo(5, 10);		
+			document.write("A área do quadro é: "+ areaDoQuadrado (5) + " centímetros quadrados" );
+			
+			var quadradoPrograma = areaDoQuadrado(20);
+			var quadradoVisitante = areaDoQuadrado(prompt("Digite um lado do seu quadrado "));
+			
+			document.write("A diferença entre as áreas dos quadrados é: " + 
+							(quadradoPrograma - quadradoVisitante)  +
+							" centímetros quadrados" );
+		</script>
+	</body>
+</html>
+
