@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Contador Interativo</title>
+</head>
+<body>
+    <h1>Contador</h1>
+    <div id="valor" class = "zero">0</div>
+    <button id="dim">Diminuir</button>
+    <button id="aum">Aumentar</button>
+
+    <script>
+        let n = 0;
+        const valor = document.getElementById('valor');
+        const dim = document.getElementById("dim");
+        const aum = document.getElementById("aum");
+
+        aum.addEventListener('click', () => {n++; valor.textContent = n;})
+        dim.addEventListener('click', () => {n--; valor.textContent = n;})
+
+    </script>
+</body>
+</html>

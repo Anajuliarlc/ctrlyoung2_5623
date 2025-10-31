@@ -14,14 +14,15 @@
 <body>
   <h1>Contador</h1>
   <div id="valor" class="zero">0</div>
-  <button id="inc">Aumentar</button>
   <button id="dec">Diminuir</button>
+  <button id="inc">Aumentar</button>
 
   <script>
     let n = 0;
     const valor = document.getElementById('valor');
     const inc   = document.getElementById('inc');
     const dec   = document.getElementById('dec');
+    
 
     function pintar() {
       valor.className = n > 0 ? 'positivo' : n < 0 ? 'negativo' : 'zero';
