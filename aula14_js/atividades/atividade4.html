@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Caixa Mágica</title>
+  <style>
+    #box {
+      width: 200px; height: 200px; background: #8ecae6; 
+      border-radius: .5rem; display: grid; place-items: center;
+      user-select: none; cursor: pointer; transition: background .2s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>Caixinha Mágica</h1>
+  <div id="box">Passe o mouse</div>
+
+  <script>
+    const box = document.getElementById('box');
+    const corOriginal = '#8ecae6';
+
+    function corAleatoria() {
+      return `hsl(${Math.floor(Math.random()*360)}, 80%, 70%)`;
+    }
+
+    box.onmouseover = () => box.style.background = corAleatoria(); // desafio: cor aleatória
+    box.onmouseout  = () => box.style.background = corOriginal;
+    box.onclick     = () => alert('Você clicou na caixa!');
+    box.onmousedown = () => box.textContent = 'Segurando...';
+    box.onmouseup   = () => box.textContent = 'Passe o mouse';
+  </script>
+</body>
+</html>

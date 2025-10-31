@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contador Interativo</title>
+  <style>
+    #valor { font: 700 2rem/1.2 sans-serif; margin: 1rem 0; }
+    .positivo { color: green; }
+    .negativo { color: crimson; }
+    .zero     { color: #333; }
+    button { padding: .6rem 1rem; margin-right: .5rem; }
+  </style>
+</head>
+<body>
+  <h1>Contador</h1>
+  <div id="valor" class="zero">0</div>
+  <button id="inc">Aumentar</button>
+  <button id="dec">Diminuir</button>
+
+  <script>
+    let n = 0;
+    const valor = document.getElementById('valor');
+    const inc   = document.getElementById('inc');
+    const dec   = document.getElementById('dec');
+
+    function pintar() {
+      valor.className = n > 0 ? 'positivo' : n < 0 ? 'negativo' : 'zero';
+      valor.textContent = n;
+    }
+
+    inc.addEventListener('click', () => { n++; pintar(); });
+    // Desafio: não deixar negativo
+    // dec.addEventListener('click', () => { if (n > 0) { n--; pintar(); } });
+
+    // Sem o desafio:
+    dec.addEventListener('click', () => { n--; pintar(); });
+
+    pintar();
+  </script>
+</body>
+</html>

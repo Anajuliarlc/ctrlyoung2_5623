@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tamanho da Janela</title>
+  <style>
+    #info { font: 600 1.2rem/1.4 system-ui; }
+  </style>
+</head>
+<body>
+  <h1>Dimensões da janela</h1>
+  <p id="info">—</p>
+
+  <script>
+    const info = document.getElementById('info');
+
+    function atualizar() {
+      info.textContent = `Largura: ${window.innerWidth}px | Altura: ${window.innerHeight}px`;
+    }
+
+    window.onload = () => {
+      console.log('Bem-vindo! Página carregada.');
+      atualizar();
+    };
+
+    window.onresize = atualizar;
+  </script>
+</body>
+</html>

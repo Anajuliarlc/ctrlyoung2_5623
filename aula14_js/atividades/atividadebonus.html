@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Painel Interativo</title>
+  <style>
+    body { font-family: system-ui, sans-serif; }
+    .row { margin: .75rem 0; }
+    #caixa { width: 160px; height: 160px; background: #bde0fe; border-radius: .75rem;
+             display: grid; place-items: center; transition: background .2s ease; }
+    #info { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Painel Interativo</h1>
+
+  <div class="row">
+    <input id="nome" placeholder="Digite seu nome" />
+    <button id="entrar">Entrar</button>
+  </div>
+
+  <div id="saudacao" class="row"></div>
+  <div id="datahora" class="row"></div>
+
+  <div id="caixa" class="row">Passe o mouse</div>
+
+  <div id="info" class="row"></div>
+
+  <script>
+    const nome = document.getElementById('nome');
+    const entrar = document.getElementById('entrar');
+    const saudacao = document.getElementById('saudacao');
+    const datahora = document.getElementById('datahora');
+    const caixa = document.getElementById('caixa');
+    const info = document.getElementById('info');
+
+    function atualizarDataHora() {
+      const d = new Date();
+      datahora.textContent = d.toLocaleString('pt-BR', { dateStyle: 'full', timeStyle: 'medium' });
+    }
+
+    function atualizarDimensoes() {
+      info.textContent = `Janela: ${innerWidth} × ${innerHeight}`;
+    }
+
+    entrar.addEventListener('click', () => {
+      const n = nome.value.trim() || 'Visitante';
+      saudacao.textContent = `Bem-vindo, ${n}!`;
+      atualizarDataHora();
+    });
+
+    // Mouse
+    function corAleatoria() { return `hsl(${Math.random()*360}, 80%, 70%)`; }
+    caixa.addEventListener('mouseover', () => caixa.style.background = corAleatoria());
+    caixa.addEventListener('mouseout',  () => caixa.style.background = '#bde0fe');
+    caixa.addEventListener('click',     () => alert('Caixa clicada!'));
+
+    // Teclado: atalhos de cor
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 'b') document.body.style.background = '#eef7ff';
+      if (e.key.toLowerCase() === 'r') document.body.style.background = '#fff0f0';
+      if (e.key.toLowerCase() === 'w') document.body.style.background = '#ffffff';
+    });
+
+    // Janela
+    window.onload = () => { atualizarDataHora(); atualizarDimensoes(); };
+    window.onresize = atualizarDimensoes;
+
+    // Atualizar relógio a cada segundo (opcional)
+    setInterval(atualizarDataHora, 1000);
+  </script>
+</body>
+</html>

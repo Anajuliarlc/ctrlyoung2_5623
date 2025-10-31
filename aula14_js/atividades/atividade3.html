@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eventos de Teclado</title>
+  <style>
+    .painel { border: 1px solid #ccc; padding: 1rem; border-radius: .5rem; }
+    .k { font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Teclas</h1>
+  <input id="campo" placeholder="Digite algo..." />
+  <div class="painel" id="painel">
+    <div>Tecla: <span class="k" id="k">—</span></div>
+    <div>Code: <span id="code">—</span></div>
+    <div>ALT: <span id="alt">false</span> | CTRL: <span id="ctrl">false</span> | SHIFT: <span id="shift">false</span></div>
+  </div>
+
+  <script>
+    const campo = document.getElementById('campo');
+    const k = document.getElementById('k');
+    const code = document.getElementById('code');
+    const alt = document.getElementById('alt');
+    const ctrl = document.getElementById('ctrl');
+    const shift = document.getElementById('shift');
+
+    document.addEventListener('keydown', (e) => {
+      k.textContent = e.key;
+      code.textContent = e.code;
+      alt.textContent = e.altKey;
+      ctrl.textContent = e.ctrlKey;
+      shift.textContent = e.shiftKey;
+
+      // Desafio: atalhos de cor
+      if (e.key.toLowerCase() === 'b') document.body.style.background = '#d0e7ff';
+      if (e.key.toLowerCase() === 'r') document.body.style.background = '#ffd6d6';
+      if (e.key.toLowerCase() === 'w') document.body.style.background = '#fff';
+    });
+  </script>
+</body>
+</html>
