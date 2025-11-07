@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Treinamento — Seleções BR MOBA & FPS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body tabindex="0">
+  <header>
+    <h1>Centro de Treinamento — Seleções Brasileiras</h1>
+    <p>Use o teclado na seção <strong>MOBA</strong> e o mouse na seção <strong>FPS</strong>. O painel registra cada ação.</p>
+  </header>
+
+  <section class="grid">
+    <!-- MOBA (TECLADO) -->
+    <div class="panel" id="moba">
+      <h2>MOBA — Teste de Atalhos do Teclado</h2>
+      <p>Pressione: <span class="tag info">Q W E R</span>, <span class="tag info">D F</span>, 
+         <span class="tag info">1–7</span>, <span class="tag info">A/X</span>, <span class="tag info">S</span>, 
+         <span class="tag info">B</span>, <span class="tag info">Y</span>, <span class="tag info">Espaço</span>, 
+         <span class="tag info">F1–F5</span>, <span class="tag info">Enter</span>, <span class="tag info">Esc</span>, 
+         <span class="tag info">C</span>, <span class="tag info">Tab</span>, <span class="tag info">P</span>.
+      </p>
+
+      <div class="arena" id="arena">
+        <div class="avatar" id="avatar">Campeão</div>
+      </div>
+
+      <div class="kbd-hint" aria-hidden="true">
+        <div><span>Teclas de habilidade</span><span class="kbd">Q · W · E · R</span></div>
+        <div><span>Feitiços de invocador</span><span class="kbd">D · F</span></div>
+        <div><span>Itens</span><span class="kbd">1–7</span></div>
+        <div><span>Atacar um local</span><span class="kbd">A / X</span></div>
+        <div><span>Interromper ação</span><span class="kbd">S</span></div>
+        <div><span>Voltar à base</span><span class="kbd">B</span></div>
+        <div><span>Travar câmera</span><span class="kbd">Y</span></div>
+        <div><span>Centralizar em você</span><span class="kbd">Espaço / F1</span></div>
+        <div><span>Centralizar em aliado</span><span class="kbd">F2 · F3 · F4 · F5</span></div>
+        <div><span>Abrir chat</span><span class="kbd">Enter</span></div>
+        <div><span>Menu</span><span class="kbd">Esc</span></div>
+        <div><span>Info do personagem</span><span class="kbd">C</span></div>
+        <div><span>Placar</span><span class="kbd">Tab</span></div>
+        <div><span>Loja</span><span class="kbd">P</span></div>
+      </div>
+
+      <div class="log" id="log-moba" aria-live="polite"></div>
+    </div>
+
+    <!-- FPS (MOUSE) -->
+    <div class="panel" id="fps">
+      <h2>FPS — Teste de Ações com o Mouse</h2>
+      <p>Aqui você pode: <span class="tag ok">Selecionar alvo</span> (um clique), 
+         <span class="tag accent">Tiro</span> (dois cliques) e 
+         <span class="tag info">Mirar</span> (mouse sobre o alvo).
+      </p>
+
+      <div class="alvo" id="alvo">
+        <div class="scope"></div>
+        <div class="avatar" style="border-color:#22c55e;">ALVO</div>
+      </div>
+
+      <div class="log" id="log-fps" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <p class="footer">Dica: clique no fundo da página se o teclado não estiver sendo capturado.</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
