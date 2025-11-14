@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f172a;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  color: #e5e7eb;
+}
+
+.container {
+  background: #020617;
+  padding: 1.5rem 1.8rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  max-width: 800px;
+  width: 100%;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.painel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+#btn-iniciar,
+#btn-reiniciar {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: #22c55e;
+  color: #022c22;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+#btn-iniciar:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+#btn-iniciar:hover:not(:disabled),
+#btn-reiniciar:hover {
+  background: #16a34a;
+}
+
+#area-jogo {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 0.75rem;
+  background: radial-gradient(circle at top, #1f2937 0, #020617 60%);
+  overflow: hidden;
+  border: 2px solid #4b5563;
+}
+
+#quadrado {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #ef4444;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(248, 113, 113, 0.7);
+  display: none; /* só aparece com o jogo ativo */
+}
+
+#tela-final {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#tela-final.oculto {
+  display: none;
+}
+
+
+.caixa-final {
+  background: #020617;
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border: 1px solid #4b5563;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.caixa-final h2 {
+  margin-top: 0;
+}
+
+.avaliacao {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #eab308;
+}
+
+.instrucao {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #9ca3af;
+}

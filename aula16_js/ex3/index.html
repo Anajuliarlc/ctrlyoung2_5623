@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini-Jogo - Clique no Quadrado</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Mini-Jogo: Clique no Quadrado</h1>
+
+    <div class="painel">
+      <div>Pontos: <span id="pontos">0</span></div>
+      <div>Tempo: <span id="tempo">30</span> s</div>
+      <button id="btn-iniciar">Iniciar Jogo</button>
+    </div>
+
+    <div id="area-jogo">
+      <div id="quadrado"></div>
+      <div id="tela-final" class="oculto">
+        <div class="caixa-final">
+          <h2>Fim de jogo!</h2>
+          <p>Sua pontuação: <span id="pontos-finais">0</span></p>
+          <p class="avaliacao" id="avaliacao-texto"></p>
+          <button id="btn-reiniciar">Jogar novamente</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="instrucao">
+      Clique no quadrado vermelho o mais rápido possível.  
+      Se não clicar a tempo, perde pontos. O jogo dura 30 segundos.
+    </p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

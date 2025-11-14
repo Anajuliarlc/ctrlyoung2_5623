@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora de Gastos Mensais</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Gastos Mensais</h1>
+
+    <!-- Formulário de gastos -->
+    <section class="secao">
+      <h2>Adicionar gasto</h2>
+      <form id="form-gasto">
+        <input
+          type="text"
+          id="nome-gasto"
+          placeholder="Ex: Mercado, Uber, Cinema..."
+          required
+        />
+
+        <select id="categoria-gasto" required>
+          <!-- opções preenchidas via JS -->
+        </select>
+
+        <input
+          type="number"
+          id="valor-gasto"
+          placeholder="Valor (R$)"
+          step="0.01"
+          min="0"
+          required
+        />
+
+        <button type="submit" id="btn-add-gasto">Adicionar</button>
+      </form>
+    </section>
+
+    <!-- Formulário de categorias -->
+    <section class="secao">
+      <h2>Gerenciar categorias</h2>
+      <form id="form-categoria">
+        <input
+          type="text"
+          id="nome-categoria"
+          placeholder="Nome da categoria (ex: Educação)"
+          required
+        />
+        <input
+          type="color"
+          id="cor-categoria"
+          value="#e5e7eb"
+        />
+        <button type="submit" id="btn-add-categoria">Adicionar categoria</button>
+      </form>
+      <p class="nota">Categorias padrão já são fornecidas, mas o usuário pode criar novas quando quiser.</p>
+    </section>
+
+    <!-- Resumo -->
+    <section class="secao resumo">
+      <p>Total do mês: <span id="total-mes">R$ 0,00</span></p>
+    </section>
+
+    <!-- Lista de gastos -->
+    <section class="secao">
+      <h2>Gastos cadastrados</h2>
+      <table id="tabela-gastos">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Valor (R$)</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+          <!-- linhas adicionadas via JS -->
+        </tbody>
+      </table>
+      <p id="mensagem-vazia" class="vazia">Nenhum gasto cadastrado.</p>
+    </section>
+
+    <!-- Gráfico -->
+    <section class="secao">
+      <h2>Gastos por categoria</h2>
+      <div id="grafico-container">
+        <!-- barras via JS -->
+      </div>
+      <div id="legenda-grafico">
+        <!-- legenda via JS -->
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

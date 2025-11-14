@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do List com Categorias</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List com Categorias</h1>
+
+    <form id="form-tarefa">
+      <input
+        type="text"
+        id="nome-tarefa"
+        placeholder="Descreva a tarefa..."
+        required
+      />
+
+      <select id="categoria">
+        <option value="estudo">Estudo</option>
+        <option value="trabalho">Trabalho</option>
+        <option value="pessoal">Pessoal</option>
+      </select>
+
+      <button type="submit" id="btn-add">Adicionar</button>
+    </form>
+
+    <div class="filtros">
+      <label for="filtro">Filtrar por categoria:</label>
+      <select id="filtro">
+        <option value="todas">Todas</option>
+        <option value="estudo">Estudo</option>
+        <option value="trabalho">Trabalho</option>
+        <option value="pessoal">Pessoal</option>
+      </select>
+    </div>
+
+    <ul id="lista-tarefas"></ul>
+    <p id="mensagem-vazia" class="vazia">Nenhuma tarefa cadastrada.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
